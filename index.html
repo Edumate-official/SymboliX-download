@@ -512,6 +512,90 @@
                 gap: 15px;
             }
         }
+        
+        
+        
+        
+        .screenshots {
+    display: flex;
+    overflow-x: auto;
+    padding: 40px 30px;
+    gap: 30px;
+    background: var(--light);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) rgba(67, 97, 238, 0.1);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Custom scrollbar for WebKit browsers */
+.screenshots::-webkit-scrollbar {
+    height: 8px;
+}
+
+.screenshots::-webkit-scrollbar-track {
+    background: rgba(67, 97, 238, 0.1);
+    border-radius: 10px;
+}
+
+.screenshots::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+.screenshot {
+    ;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border: 5px solid white;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 250px;
+    object-fit: contain;
+    background: white;
+}
+
+.screenshot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Navigation arrows for larger screens */
+@media (min-width: 768px) {
+    .screenshots {
+        position: relative;
+        padding: 50px 60px;
+    }
+    
+  
+    
+    .screenshots::before,
+    .screenshots::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 60px;
+        z-index: 2;
+        pointer-events: none;
+    }
+    
+    .screenshots::before {
+        left: 0;
+        background: linear-gradient(to right, var(--light) 0%, transparent 100%);
+    }
+    
+    .screenshots::after {
+        right: 0;
+        background: linear-gradient(to left, var(--light) 0%, transparent 100%);
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -535,8 +619,8 @@
         </div>
         
         <div class="screenshots">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn3DYG63TF_WguNVitl6gwOPhvFh6VL4F02K0eOIqOwil867K3KsdF9R0&s=10" alt="App Screenshot 1" class="screenshot">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCNaCJCXgOrWuSkz2ikEO259IX5gtHTR4uIA&s" alt="App Screenshot 2" class="screenshot">
+            <img src="https://i.ibb.co/s9RXx994/Picsart-25-06-10-09-40-08-422.jpg" alt="App Screenshot 1" class="screenshot">
+            <img src="https://i.ibb.co/35HN5NMx/Picsart-25-06-10-11-19-48-258.jpg" alt="App Screenshot 2" class="screenshot">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-rvti0vvAiwgCAd0x5wc9fDaZgYjyRwkbTKUCPmcz5K7890RwlFi-y1o&s=10" alt="App Screenshot 3" class="screenshot">
             <img src="https://via.placeholder.com/250x350" alt="App Screenshot 4" class="screenshot">
             <img src="https://via.placeholder.com/250x350" alt="App Screenshot 5" class="screenshot">
@@ -559,7 +643,7 @@
                 </div>
             </div>
             
-            <a href="https://edumate-official.github.io/SymboliX-download/Hmm.apk" class="download-btn">
+            <a href="#" class="download-btn">
                 <i class="fas fa-download"></i> Download Now - It's Free!
             </a>
             
